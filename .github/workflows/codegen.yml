@@ -11,8 +11,6 @@ jobs:
         uses: actions/checkout@v2
       - name: Generate Code
         run: make gen
-      - name: Format Code
-        run: make format
       - name: Test generated code hasn't been modified
         run: |
           git status --porcelain
