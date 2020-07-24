@@ -2,10 +2,10 @@
 package simple
 
 import (
+	"github.com/anz-bank/sysl-ci/gen/jsonplaceholder"
 	"github.com/anz-bank/sysl-go/config"
 	"github.com/anz-bank/sysl-go/core"
 	"github.com/anz-bank/sysl-go/handlerinitialiser"
-	"github.com/anzx/fabric-register/gen/jsonplaceholder"
 )
 
 // DownstreamClients for simple

@@ -7,10 +7,10 @@ import (
 	"net/http"
 	"net/url"
 
+	"github.com/anz-bank/sysl-ci/gen/jsonplaceholder"
 	"github.com/anz-bank/sysl-go/common"
 	"github.com/anz-bank/sysl-go/restlib"
 	"github.com/anz-bank/sysl-go/validator"
-	"github.com/anzx/fabric-register/gen/jsonplaceholder"
 )
 
 // Service interface for simple
