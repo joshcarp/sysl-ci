@@ -2,7 +2,6 @@
 package jsonplaceholder
 
 import (
-	"encoding/json"
 	"time"
 
 	"github.com/anz-bank/sysl-go/validator"
@@ -21,27 +20,6 @@ type TodosResponse struct {
 	ID        *float64 `json:"id,omitempty"`
 	Title     *string  `json:"title,omitempty"`
 	UserId    *float64 `json:"userId,omitempty"`
-}
-
-func (t *TodosResponse) UnmarshalJSON(data []byte) error {
-	inner := struct {
-		Completed *bool    `json:"completed,omitempty"`
-		ID        *float64 `json:"id,omitempty"`
-		Title     *string  `json:"title,omitempty"`
-		UserId    *float64 `json:"userId,omitempty"`
-	}{}
-	err := json.Unmarshal(data, &inner)
-	if err != nil {
-		return err
-	}
-
-	*t = TodosResponse{
-		Completed: inner.Completed,
-		ID:        inner.ID,
-		Title:     inner.Title,
-		UserId:    inner.UserId,
-	}
-	return nil
 }
 
 // GetTodosRequest ...

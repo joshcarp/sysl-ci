@@ -10,7 +10,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Generate Code
-        run: make gen
+        run: make
       - name: Test generated code hasn't been modified
         run: |
           git status --porcelain
