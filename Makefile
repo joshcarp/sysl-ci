@@ -3,7 +3,7 @@ apps = simple
 deps = jsonplaceholder # this can be a list separated by a space or left empty
 outdir = gen
 # Current go import path
-basepath = github.com/anz-bank/sysl-ci
+basepath = github.com/joshcarp/sysl-ci
 
 ####################################################################
 #                                                                  #

@@ -5,8 +5,8 @@ import (
 	"context"
 	"time"
 
-	"github.com/anz-bank/sysl-ci/gen/jsonplaceholder"
 	"github.com/anz-bank/sysl-go/config"
+	"github.com/joshcarp/sysl-ci/gen/jsonplaceholder"
 )
 
 // DefaultSimpleImpl ...

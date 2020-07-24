@@ -4,11 +4,11 @@ package simple
 import (
 	"net/http"
 
-	"github.com/anz-bank/sysl-ci/gen/jsonplaceholder"
 	"github.com/anz-bank/sysl-go/common"
 	"github.com/anz-bank/sysl-go/core"
 	"github.com/anz-bank/sysl-go/restlib"
 	"github.com/anz-bank/sysl-go/validator"
+	"github.com/joshcarp/sysl-ci/gen/jsonplaceholder"
 )
 
 // Handler interface for simple
