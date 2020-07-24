@@ -8,7 +8,7 @@ import (
 	"github.com/anz-bank/sysl-go/core"
 	"github.com/anz-bank/sysl-go/restlib"
 	"github.com/anz-bank/sysl-go/validator"
-	"github.com/anz-bank/sysl-template/gen/jsonplaceholder"
+	"github.com/anzx/fabric-register/gen/jsonplaceholder"
 )
 
 // Handler interface for simple

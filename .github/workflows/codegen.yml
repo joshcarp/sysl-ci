@@ -1,0 +1,23 @@
+on: [push, pull_request]
+name: Check codegen diff
+jobs:
+  test:
+    strategy:
+      matrix:
+        platform: [ubuntu-latest]
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Generate Code
+        run: make gen
+      - name: Format Code
+        run: make format
+      - name: Test generated code hasn't been modified
+        run: |
+          git status --porcelain
+          git diff
+          if [ "$( git status --porcelain | wc -l )" -gt "0" ]; then
+            echo "::error::Generated code does not match committed code. If this is a PR, comment '/generate' to automatically fix this issue."
+            exit 1
+          fi

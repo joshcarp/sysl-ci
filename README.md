@@ -10,7 +10,7 @@ Simple REST endpoint generation in Go
 ## How to use this template;
 
 - Click the `Use this template` button up the top
-- ctrl-f and replace all instances of `github.com/anz-bank/sysl-template` with your import path, eg `github.com/foobar/myrepo`
+- ctrl-f and replace all instances of `github.com/joshcarp/sysl-ci` with your import path, eg `github.com/foobar/myrepo`
 - run `make`
   - note: `make` must be run with a working internet connection, as it fetches transforms and grammars over the network.
 - run   `go run main.go`

@@ -5,7 +5,7 @@ import (
 	"github.com/anz-bank/sysl-go/config"
 	"github.com/anz-bank/sysl-go/core"
 	"github.com/anz-bank/sysl-go/handlerinitialiser"
-	"github.com/anz-bank/sysl-template/gen/jsonplaceholder"
+	"github.com/anzx/fabric-register/gen/jsonplaceholder"
 )
 
 // DownstreamClients for simple

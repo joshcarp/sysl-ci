@@ -7,8 +7,8 @@ import (
 	"os"
 
 	"github.com/anz-bank/sysl-go/common"
-	"github.com/anz-bank/sysl-template/gen/jsonplaceholder"
-	"github.com/anz-bank/sysl-template/gen/simple"
+	"github.com/joshcarp/sysl-ci/gen/jsonplaceholder"
+	"github.com/joshcarp/sysl-ci/gen/simple"
 	"github.com/go-chi/chi"
 )
 

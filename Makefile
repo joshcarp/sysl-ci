@@ -3,7 +3,7 @@ apps = simple
 deps = jsonplaceholder # this can be a list separated by a space or left empty
 outdir = gen
 # Current go import path
-basepath = github.com/anz-bank/sysl-template
+basepath = github.com/anz-bank/sysl-ci
 
 ####################################################################
 #                                                                  #
@@ -14,7 +14,7 @@ basepath = github.com/anz-bank/sysl-template
 #                                                                  #
 #                                                                  #
 ####################################################################
-SYSL_GO=anzbank/sysl-go:v0.59.0
+SYSL_GO=joshcarp/sysl-go
 SYSL=anzbank/sysl:v0.152.0
 .PHONY: setup gen downstream
 all: setup gen downstream format
@@ -28,10 +28,10 @@ setup:
 
 # Generate files with internal git service
 gen:
-	$(foreach app, $(apps), $(shell echo "docker run --rm -v $$(pwd):/mount:ro  $(SYSL_GO) /sysl-go/codegen/arrai/service.arrai $(basepath)/$(outdir) /mount/api/project.json $(app) rest-app | tar xf - -C $(outdir)/$(app)"))
+	$(foreach app, $(apps), $(shell echo "docker run --rm -v $$(pwd)/$(outdir)/$(app):/out:rw -v $$(pwd):/mount:ro  $(SYSL_GO) /sysl-go/codegen/arrai/service.arrai $(basepath)/$(outdir) /mount/api/project.json $(app) rest-app"))
 
 downstream:
-	$(foreach app, $(deps), $(shell docker run --rm -v $$(pwd):/mount:ro $(SYSL_GO) /sysl-go/codegen/arrai/service.arrai $(basepath)/$(outdir) /mount/api/project.json $(app) rest-client | tar xf - -C $(outdir)/$(app)))
+	$(foreach app, $(deps), $(shell docker run --rm -v $$(pwd)/$(outdir)/$(app):/out:rw -v $$(pwd):/mount:ro $(SYSL_GO) /sysl-go/codegen/arrai/service.arrai $(basepath)/$(outdir) /mount/api/project.json $(app) rest-client))
 
 .PHONY: format
 format:

@@ -10,7 +10,7 @@ import (
 	"github.com/anz-bank/sysl-go/common"
 	"github.com/anz-bank/sysl-go/restlib"
 	"github.com/anz-bank/sysl-go/validator"
-	"github.com/anz-bank/sysl-template/gen/jsonplaceholder"
+	"github.com/anzx/fabric-register/gen/jsonplaceholder"
 )
 
 // Service interface for simple
